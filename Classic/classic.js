@@ -40,9 +40,6 @@ function func(){
 
 }
 
-function sleep(ms){
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
 
 function clearInput() {
     document.getElementById('guess').value = '';
