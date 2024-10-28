@@ -1,6 +1,8 @@
 .logo {
     text-align: center;
     padding: 20px;
+    scale: 80%;
+    transition: all 0.5s;
 }
 
 body{
@@ -10,6 +12,6 @@ body{
 }
 
 .logo:hover {
-    scale: 120%;
+    scale: 100%;
     transition: all 0.5s;
 }
