@@ -15,3 +15,10 @@ body{
     scale: 100%;
     transition: all 0.5s;
 }
+
+.results {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin-top: 20px;
+}
