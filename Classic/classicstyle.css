@@ -8,3 +8,8 @@ body{
     font-weight: bolder;
     font-size: large;
 }
+
+.logo:hover {
+    scale: 120%;
+    transition: all 0.5s;
+}
