@@ -14,13 +14,13 @@
             <img src="../Graphics/logo.png">
         </a>
     </div></center>
+    <div>
+        <?php include 'dane_classic.php'; ?>
+    </div>
     <form onsubmit="clearInput(); return false;">
         <input type="text" id="guess" value="" placeholder="Podaj nazwę samochodu" onkeydown="checkEnter()"></input>
         <button type="submit" id="but" onclick="func()">Submit</button>
     </form>
     <div id="results" class="results"></div>
-    <div>
-        <?php include 'dane_classic.php'; ?>
-    </div>
 </body>
 </html>

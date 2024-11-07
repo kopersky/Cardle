@@ -7,10 +7,10 @@ $dbname = "cardle";
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 if ($conn->connect_error) {
-    die("Chuj nie dziala: " . $conn->connect_error);
+    die("connection error: " . $conn->connect_error);
 }
 
-$sql = "SELECT id, logo FROM cardle WHERE id=1";
+$sql = "SELECT id, logo FROM cardle ORDER BY rand() LIMIT 1";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
