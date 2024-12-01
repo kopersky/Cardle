@@ -10,7 +10,7 @@
 </head>
 <body><center>
     <div class="logo">
-        <a href="../main.html">
+        <a href="../main.php">
             <img src="../Graphics/logo.png">
         </a>
     </div></center>
