@@ -17,7 +17,7 @@ body{
 }
 
 .results {
-    display: flex;
+    display: block;
     flex-direction: column-reverse;
     align-items: center;
     margin-top: 20px;

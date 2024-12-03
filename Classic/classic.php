@@ -21,6 +21,8 @@
         <input type="text" id="guess" value="" placeholder="Podaj nazwę samochodu" onkeydown="checkEnter()"></input>
         <button type="submit" id="but" onclick="func()">Submit</button>
     </form>
+    <center>
     <div id="results" class="results"></div>
+    </center>
 </body>
 </html>
