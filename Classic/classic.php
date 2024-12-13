@@ -20,7 +20,7 @@
     </form>
     <center>
     <div id="results" class="results"></div>
-    <div id="car-info">Ładowanie danych...</div>
+    <div id="car-info"></div>
     </center>
 </body>
 </html>

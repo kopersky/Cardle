@@ -1,8 +1,30 @@
+let rand;
+
+document.addEventListener("DOMContentLoaded", async () => {
+    const carInfoDiv = document.getElementById("results");
+
+    try {
+        const response = await fetch("api.php");
+        const carData = await response.json();
+
+        if (carData.error) {
+            carInfoDiv.textContent = carData.error;
+        } else {
+            rand = [carData.marka, carData.model, carData.rok_produkcji, carData.typ_nadwozia]
+            console.log(rand)
+        }
+    } catch (error) {
+        carInfoDiv.textContent = "Błąd podczas ładowania danych.";
+        console.error(error);
+    }
+});
+
+
 function func() {
     var x = document.getElementById("guess").value;
-    var carBrand = 'bmw';
+    var carBrand = rand[0];
 
-    if (x.toLowerCase() === carBrand) {
+    if (x.toLowerCase() === carBrand.toLowerCase()) {
         var div = createResultDiv(x, "green");
         addResultToTop(div);
         setTimeout(() => {
@@ -39,24 +61,3 @@ function addResultToTop(div) {
     const resultsContainer = document.getElementById("results");
     resultsContainer.prepend(div);
 }
-
-
-
-document.addEventListener("DOMContentLoaded", async () => {
-    const carInfoDiv = document.getElementById("car-info");
-
-    try {
-        const response = await fetch("api.php");
-        const carData = await response.json();
-
-        if (carData.error) {
-            carInfoDiv.textContent = carData.error;
-        }
-        // else {
-        //     carInfoDiv.textContent = `ID: ${carData.id}, Marka: ${carData.marka}, Rok produkcji: ${carData.rok_produkcji}, Model: ${carData.model}, Typ nadwozia: ${carData.typ_nadwozia}`;
-        // }
-    } catch (error) {
-        carInfoDiv.textContent = "Błąd podczas ładowania danych.";
-        console.error(error);
-    }
-});
