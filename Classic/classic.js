@@ -51,9 +51,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         if (carData.error) {
             carInfoDiv.textContent = carData.error;
-        } else {
-            carInfoDiv.textContent = `ID: ${carData.id}, Marka: ${carData.marka}, Rok produkcji: ${carData.rok_produkcji}, Model: ${carData.model}, Typ nadwozia: ${carData.typ_nadwozia}`;
         }
+        // else {
+        //     carInfoDiv.textContent = `ID: ${carData.id}, Marka: ${carData.marka}, Rok produkcji: ${carData.rok_produkcji}, Model: ${carData.model}, Typ nadwozia: ${carData.typ_nadwozia}`;
+        // }
     } catch (error) {
         carInfoDiv.textContent = "Błąd podczas ładowania danych.";
         console.error(error);
