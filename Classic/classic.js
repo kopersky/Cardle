@@ -39,3 +39,23 @@ function addResultToTop(div) {
     const resultsContainer = document.getElementById("results");
     resultsContainer.prepend(div);
 }
+
+
+
+document.addEventListener("DOMContentLoaded", async () => {
+    const carInfoDiv = document.getElementById("car-info");
+
+    try {
+        const response = await fetch("api.php");
+        const carData = await response.json();
+
+        if (carData.error) {
+            carInfoDiv.textContent = carData.error;
+        } else {
+            carInfoDiv.textContent = `ID: ${carData.id}, Marka: ${carData.marka}, Rok produkcji: ${carData.rok_produkcji}, Model: ${carData.model}, Typ nadwozia: ${carData.typ_nadwozia}`;
+        }
+    } catch (error) {
+        carInfoDiv.textContent = "Błąd podczas ładowania danych.";
+        console.error(error);
+    }
+});

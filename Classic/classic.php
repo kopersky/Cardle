@@ -14,15 +14,13 @@
             <img src="../Graphics/logo.png">
         </a>
     </div></center>
-    <div>
-        <?php include ('dane_classic.php'); ?>
-    </div>
-    <form onsubmit="clearInput(); return false;">
+    <form onsubmit="clearInput(); return false;" method = "POST">
         <input type="text" id="guess" value="" placeholder="Podaj nazwę samochodu" onkeydown="checkEnter()"></input>
-        <button type="submit" id="but" onclick="func()">Submit</button>
+        <button type="submit" id="but" onclick="func()" name = "sub">Submit</button>
     </form>
     <center>
     <div id="results" class="results"></div>
+    <div id="car-info">Ładowanie danych...</div>
     </center>
 </body>
 </html>
