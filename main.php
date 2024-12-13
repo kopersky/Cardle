@@ -12,7 +12,7 @@
     </center></header>
     <div class="logo"><center><img src="Graphics/logo.png"></center></div>
     <center><section class="guziki">
-        <a onclick="window.location.href='classic.php'>
+        <a href='classic/classic.php'>
             <img class="guz" src="Graphics/classbutt.png" alt="Classic">
         </a>
         <a href="Photo/Photo.html">
