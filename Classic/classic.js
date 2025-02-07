@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 function func() {
     var x = document.getElementById("guess").value;
-    var carBrand = rand[0];
+    var carBrand = rand[0] + ' ' + rand[1];
 
     if (x.toLowerCase() === carBrand.toLowerCase()) {
         var div = createResultDiv(x, "green");
@@ -40,12 +40,20 @@ function func() {
     }
 }
 
+function createResultChild(data) {
+    var div = document.createElement("div");
+    div.style.height = "90%";
+    div.style.width = "20%";
+    div.textContent = data;
+    div.style.backgroundColor = "light green";
+}
+
 function createResultDiv(text, bgColor) {
     var div = document.createElement("div");
     div.style.display = "flex";
     div.style.height = "200px";
     div.style.width = "200px";
-    div.style.backgroundColor = bgColor;
+    div.style.backgroundColor = "plum";
     div.style.marginTop = "15px";
     div.style.justifyContent = "center";
     div.style.alignItems = "center";
