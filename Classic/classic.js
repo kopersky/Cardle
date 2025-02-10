@@ -25,7 +25,7 @@ function func() {
     var carBrand = rand[0] + ' ' + rand[1];
 
     if (x.toLowerCase() === carBrand.toLowerCase()) {
-        var div = createResultDiv(x, "green");
+        var div = createResultDiv(rand, "green");
         addResultToTop(div);
         setTimeout(() => {
             window.location.reload();
@@ -35,7 +35,7 @@ function func() {
         return alert("Pole nie może być puste.");
     } 
     else {
-        var div = createResultDiv(x, "red");
+        var div = createResultDiv(rand, "red");
         addResultToTop(div);
     }
 }
@@ -45,19 +45,36 @@ function createResultChild(data) {
     div.style.height = "90%";
     div.style.width = "20%";
     div.textContent = data;
-    div.style.backgroundColor = "light green";
+    div.style.backgroundColor = "lightgreen";
+    div.style.display = "flex";
+    div.style.justifyContent = "center";
+    div.style.alignItems = "center";
+    div.style.border = "1px solid black";
+    
+    return div;
 }
 
-function createResultDiv(text, bgColor) {
+function createResultDiv(rand, bgColor) {
     var div = document.createElement("div");
     div.style.display = "flex";
+    div.style.gap = "10px";
     div.style.height = "200px";
-    div.style.width = "200px";
-    div.style.backgroundColor = "plum";
+    div.style.width = "50%";
+    div.style.backgroundColor = bgColor || "white";
     div.style.marginTop = "15px";
     div.style.justifyContent = "center";
     div.style.alignItems = "center";
-    div.textContent = text;
+    div.style.border = "2px solid gray";
+    
+    if (Array.isArray(rand)) {
+        rand.forEach(cell => {
+            var childDiv = createResultChild(cell);
+            div.appendChild(childDiv);
+        });
+    } else {
+        console.error("rand is not an array:", rand);
+    }
+
     return div;
 }
 
