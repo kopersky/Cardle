@@ -18,8 +18,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         console.error(error);
     }
 });
-
-
 function func() {
     var x = document.getElementById("guess").value;
     var carBrand = rand[0] + ' ' + rand[1];
@@ -86,3 +84,49 @@ function addResultToTop(div) {
     const resultsContainer = document.getElementById("results");
     resultsContainer.prepend(div);
 }
+
+document.addEventListener('DOMContentLoaded', async () => {
+    const modeleDB = document.getElementById('modele');
+    const inputField = document.getElementById('guess');
+
+    try {
+        const odp = await fetch('input.php');
+        let modelelista = await odp.json();
+        console.log("Otrzymane dane:", modelelista);
+
+        if (!Array.isArray(modelelista)) {
+            modelelista = [modelelista];
+        }
+
+        let modeleinput = modelelista.map(item => `${item.marka} ${item.model}`);
+        console.log("Lista modeli:", modeleinput);
+
+        modeleDB.innerHTML = ''; 
+
+        modeleinput.forEach(item => {
+            const option = document.createElement('option');
+            option.value = item;
+            modeleDB.appendChild(option);
+        });
+
+        inputField.addEventListener('change', () => {
+            if (!modeleinput.includes(inputField.value)) {
+                alert("Wybierz poprawny model z listy!");
+                inputField.value = ''; // Resetuje pole
+            }
+        });
+
+    } catch (error) {
+        modeleDB.innerHTML = "<option>Błąd ładowania danych</option>";
+        console.error(error);
+    }
+});
+
+function checkEnter(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById("but").click();
+    }
+}
+
+console.log(modeleDB)

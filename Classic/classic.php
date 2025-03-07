@@ -16,7 +16,8 @@
             </a>
         </div></center>
         <form onsubmit="clearInput(); return false;" method = "POST" class="input">
-            <input type="text" id="guess" value="" placeholder="Podaj nazwę samochodu" onkeydown="checkEnter()"></input>
+            <input list='modele' type="text" id="guess" value="" placeholder="Podaj nazwę samochodu" onkeydown="checkEnter()"></input>
+            <datalist id="modele"></datalist>
             <button type="submit" id="but" onclick="func()" name = "sub">Submit</button>
         </form>
         <center>
