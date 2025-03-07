@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         inputField.addEventListener('change', () => {
             if (!modeleinput.includes(inputField.value)) {
                 alert("Wybierz poprawny model z listy!");
-                inputField.value = ''; // Resetuje pole
+                inputField.value = '';
             }
         });
 
