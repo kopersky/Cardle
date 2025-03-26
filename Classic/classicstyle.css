@@ -1,17 +1,25 @@
-.logo {
-    text-align: center;
-    padding: 20px;
-    scale: 80%;
-    transition: all 0.5s;
-}
-
 body {
+    margin: 0 auto;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bolder;
     font-size: large;
     width: 100%;
-    height: 100%;
-    background-color: #ffffff;
+    height: 1000%;
+    background-image: linear-gradient(black, black), url("../Graphics/classictheme.jpg");
+    background-repeat: repeat-x;
+    background-size: cover;
+    background-blend-mode: saturation;
+    background-attachment: fixed;
+    background-position: left top;
+    position: relative;
+
+}
+
+img{
+    display: block;
+    scale: 0.5;
+    margin: 0 auto;
+    transform: translate(0%, -50%);
 }
 
 .container {
@@ -21,10 +29,12 @@ body {
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 95%;
+    transform: translateY(-10%);
 }
 
 .game-info {
-    background-color: #e6f2ff;
+    background-color: #adadad;
     padding: 15px 20px;
     border-radius: 5px;
     margin-bottom: 20px;

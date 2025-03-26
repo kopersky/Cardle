@@ -49,7 +49,7 @@ function func() {
         if (isCorrect) {
             setTimeout(() => {
                 window.location.reload();
-            }, 2000); // Give user a bit more time to see the matches
+            }, 1000); // Give user a bit more time to see the matches
         }
     });
 }
@@ -112,7 +112,6 @@ function createComparisonResultDiv(guessedCar, isCorrectGuess) {
     // Compare production year
     const yearMatches = guessedCar.rok_produkcji === targetCar.rok_produkcji;
     div.appendChild(createResultChild(guessedCar.rok_produkcji, yearMatches));
-    
     // Compare body type
     const bodyTypeMatches = guessedCar.typ_nadwozia.toLowerCase() === targetCar.typ_nadwozia.toLowerCase();
     div.appendChild(createResultChild(guessedCar.typ_nadwozia, bodyTypeMatches));
