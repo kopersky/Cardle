@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 25, 2025 at 02:40 PM
+-- Generation Time: Mar 28, 2025 at 07:24 PM
 -- Wersja serwera: 10.4.32-MariaDB
 -- Wersja PHP: 8.2.12
 
@@ -61,7 +61,7 @@ INSERT INTO `cardle` (`id`, `marka`, `model`, `rok_produkcji`, `typ_nadwozia`, `
 (16, 'Tesla', 'Model 3', 2021, 'sedan', 0x706c616365686f6c646572, 0x706c616365686f6c646572, 'Stany Zjednoczone'),
 (17, 'Porsche', '911', 2018, 'coupe', 0x706c616365686f6c646572, 0x706c616365686f6c646572, 'Niemcy'),
 (18, 'Jeep', 'Grand Cherokee', 2020, 'SUV', 0x706c616365686f6c646572, 0x706c616365686f6c646572, 'Stany Zjednoczone'),
-(19, 'Land Rover', 'Range Rover', 2019, 'SUV', 0x706c616365686f6c646572, 0x706c616365686f6c646572, 'Wielka Brytania'),
+(19, 'BMW', 'M5', 2005, 'sedan', 0x706c616365686f6c646572, 0x706c616365686f6c646572, 'Niemcy'),
 (20, 'Jaguar', 'F-Type', 2021, 'coupe', 0x706c616365686f6c646572, 0x706c616365686f6c646572, 'Wielka Brytania'),
 (21, 'Infiniti', 'Q50', 2020, 'sedan', 0x706c616365686f6c646572, 0x706c616365686f6c646572, 'Japonia'),
 (22, 'Alfa Romeo', 'Giulia', 2019, 'sedan', 0x706c616365686f6c646572, 0x706c616365686f6c646572, 'Włochy'),

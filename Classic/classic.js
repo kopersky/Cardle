@@ -34,7 +34,6 @@ function func() {
         return alert("Pole nie może być puste.");
     }
 
-    // Find the details of the guessed car
     findCarDetails(x).then(guessedCar => {
         if (!guessedCar) {
             return alert("Wybierz poprawny model z listy!");
@@ -42,29 +41,25 @@ function func() {
 
         var isCorrect = x.toLowerCase() === carBrand.toLowerCase();
         
-        // Create result div with comparison
         var div = createComparisonResultDiv(guessedCar, isCorrect);
         addResultToTop(div);
         
         if (isCorrect) {
             setTimeout(() => {
                 window.location.reload();
-            }, 1000); // Give user a bit more time to see the matches
+            }, 1000);
         }
     });
 }
 
 async function findCarDetails(carFullName) {
     try {
-        // Split the car name to get brand and model
         const [brand, ...modelParts] = carFullName.split(' ');
         const model = modelParts.join(' ');
         
-        // Fetch all cars from the database
         const response = await fetch('get_all_cars.php');
         const cars = await response.json();
         
-        // Find the matching car
         return cars.find(car => 
             car.marka.toLowerCase() === brand.toLowerCase() && 
             car.model.toLowerCase() === model.toLowerCase()
@@ -101,18 +96,15 @@ function createComparisonResultDiv(guessedCar, isCorrectGuess) {
     div.style.alignItems = "center";
     div.style.border = "2px solid gray";
     
-    // Compare brand
     const brandMatches = guessedCar.marka.toLowerCase() === targetCar.marka.toLowerCase();
     div.appendChild(createResultChild(guessedCar.marka, brandMatches));
     
-    // Compare model
     const modelMatches = guessedCar.model.toLowerCase() === targetCar.model.toLowerCase();
     div.appendChild(createResultChild(guessedCar.model, modelMatches));
     
-    // Compare production year
     const yearMatches = guessedCar.rok_produkcji === targetCar.rok_produkcji;
     div.appendChild(createResultChild(guessedCar.rok_produkcji, yearMatches));
-    // Compare body type
+
     const bodyTypeMatches = guessedCar.typ_nadwozia.toLowerCase() === targetCar.typ_nadwozia.toLowerCase();
     div.appendChild(createResultChild(guessedCar.typ_nadwozia, bodyTypeMatches));
 

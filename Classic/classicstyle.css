@@ -124,14 +124,14 @@ img{
 }
 
 .correct {
-    background-color: #4CAF50;  /* Green */
+    background-color: #4CAF50;
 }
 
 .partial {
-    background-color: #FFC107;  /* Yellow */
+    background-color: #FFC107;
     color: #333;
 }
 
 .incorrect {
-    background-color: #F44336;  /* Red */
+    background-color: #F44336;
 }

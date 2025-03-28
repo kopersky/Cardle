@@ -10,7 +10,6 @@ if ($conn->connect_error) {
     die(json_encode(["error" => "Connection failed: " . $conn->connect_error]));
 }
 
-// Get all cars for the datalist instead of just 10
 $sql = "SELECT marka, model FROM cardle";
 $result = $conn->query($sql);
 
