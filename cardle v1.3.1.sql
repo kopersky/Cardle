@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 28, 2025 at 07:24 PM
+-- Generation Time: Mar 28, 2025 at 07:31 PM
 -- Wersja serwera: 10.4.32-MariaDB
 -- Wersja PHP: 8.2.12
 
@@ -64,7 +64,7 @@ INSERT INTO `cardle` (`id`, `marka`, `model`, `rok_produkcji`, `typ_nadwozia`, `
 (19, 'BMW', 'M5', 2005, 'sedan', 0x706c616365686f6c646572, 0x706c616365686f6c646572, 'Niemcy'),
 (20, 'Jaguar', 'F-Type', 2021, 'coupe', 0x706c616365686f6c646572, 0x706c616365686f6c646572, 'Wielka Brytania'),
 (21, 'Infiniti', 'Q50', 2020, 'sedan', 0x706c616365686f6c646572, 0x706c616365686f6c646572, 'Japonia'),
-(22, 'Alfa Romeo', 'Giulia', 2019, 'sedan', 0x706c616365686f6c646572, 0x706c616365686f6c646572, 'Włochy'),
+(22, 'Peugot', '208', 2020, 'hatchback', 0x706c616365686f6c646572, 0x706c616365686f6c646572, 'Francja'),
 (23, 'Dodge', 'Challenger', 2018, 'coupe', 0x706c616365686f6c646572, 0x706c616365686f6c646572, 'Stany Zjednoczone'),
 (24, 'Chrysler', '300', 2020, 'sedan', 0x706c616365686f6c646572, 0x706c616365686f6c646572, 'Stany Zjednoczone'),
 (25, 'Acura', 'RDX', 2021, 'SUV', 0x706c616365686f6c646572, 0x706c616365686f6c646572, 'Japonia'),
@@ -79,7 +79,7 @@ INSERT INTO `cardle` (`id`, `marka`, `model`, `rok_produkcji`, `typ_nadwozia`, `
 (34, 'Lamborghini', 'Urus', 2020, 'SUV', 0x706c616365686f6c646572, 0x706c616365686f6c646572, 'Włochy'),
 (35, 'Bentley', 'Continental GT', 2018, 'coupe', 0x706c616365686f6c646572, 0x706c616365686f6c646572, 'Wielka Brytania'),
 (36, 'Rolls-Royce', 'Cullinan', 2019, 'SUV', 0x706c616365686f6c646572, 0x706c616365686f6c646572, 'Wielka Brytania'),
-(37, 'Aston Martin', 'Vantage', 2020, 'coupe', 0x706c616365686f6c646572, 0x706c616365686f6c646572, 'Wielka Brytania'),
+(37, 'Opel', 'Astra', 2022, 'hatchback', 0x706c616365686f6c646572, 0x706c616365686f6c646572, 'Niemcy'),
 (38, 'McLaren', '720S', 2021, 'coupe', 0x706c616365686f6c646572, 0x706c616365686f6c646572, 'Wielka Brytania'),
 (39, 'Bugatti', 'Chiron', 2018, 'coupe', 0x706c616365686f6c646572, 0x706c616365686f6c646572, 'Francja'),
 (40, 'Pagani', 'Huayra', 2019, 'coupe', 0x706c616365686f6c646572, 0x706c616365686f6c646572, 'Włochy'),
