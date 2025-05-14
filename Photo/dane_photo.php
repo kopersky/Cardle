@@ -1,26 +1,23 @@
 <?php
-$servername = "localhost"; 
-$username = "root";        
-$password = "";            
+header('Content-type: application/json');
+$servername = "localhost";
+$username = "root";
+$password = "";
 $dbname = "cardle";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
-
 if ($conn->connect_error) {
     die("connection error: " . $conn->connect_error);
 }
-
-$sql = "SELECT id, zdjecia FROM cardle ORDER BY rand() LIMIT 1";
+$sql = "SELECT id, marka, model, zdjecia FROM cardle ORDER BY rand() LIMIT 1";
 $result = $conn->query($sql);
-
+$data = [];
 if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        echo "ID: " . $row["id"] . " - zdjecie: " . $row["zdjecia"];
-    }
+    $data = $result->fetch_assoc();
 } else {
-    echo "0 results";
+    $data = ["error" => "0 results"];
 }
 
+echo json_encode($data);
 $conn->close();
-
 ?>

@@ -13,3 +13,20 @@ function checkEnter(event){
         document.getElementById("guess").click();
     }
 }
+
+fetch('dane_photo.php')
+.then(response => {
+    if (!response.ok){
+        throw new Error('Wystapil blad');
+    }
+    return response.json();
+})
+.then(data => {
+    console.log("id:", data.id);
+    console.log("zdj: ", data.zdjecia);
+    console.log("marka: ", data.marka);
+    console.log("model: ", data.model)
+})
+.catch(error =>{
+    console.error("wystapil blad", error);
+})
