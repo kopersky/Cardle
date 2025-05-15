@@ -31,11 +31,13 @@
     cred.addEventListener('click', function(){
         if (isExpanded) {
             cred.style.height = '49.59px'
-            cred.style.transition = 'all 0.7s'
+            cred.style.transition = 'all 0.3s'
+            cred.textContent = 'Credits'
             isExpanded = false
         } else {
-            cred.style.height = '250px'
-            cred.style.transition = 'all 0.7s'
+            cred.style.height = '125px'
+            cred.style.transition = 'all 0.3s'
+            cred.innerHTML = 'Credits <br> Dziamski Bartosz <br> Jamry Bartosz <br> Kopka Igor';
             isExpanded = true
         }
     });
