@@ -7,7 +7,7 @@
 }
 
 body {
-  background-image: url('Graphics/bg.png');
+  background-image: url('Graphics/indextheme.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -54,7 +54,7 @@ p {
 }
 
 .nav-button {
-  background-color: #4c6ef5;
+  background-color: #3498db;
   color: #fff;
   border: none;
   padding: 12px 20px;
