@@ -1,4 +1,14 @@
-// tego typu tu zdjecia beda robic brr i z blob zrobi sie jpg czy cos
+document.addEventListener("DOMContentLoaded", async () => {
+    const carInfoDiv = document.getElementById("results");
+
+    const response = await fetch("api.php");
+    const carData = await response.json();
+    console.log(response)
+    // console.log(carData)
+});
+
+//niech sie uleży (odbiera dane z pliku php)
+
 function clearInput(){
     document.getElementById("guess").innerText = ""
 }

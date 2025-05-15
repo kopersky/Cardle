@@ -10,7 +10,7 @@ if ($conn->connect_error) {
     die(json_encode(["error" => "Connection failed: " . $conn->connect_error]));
 }
 
-$sql = "SELECT marka FROM cardle";
+$sql = "SELECT marka, model, zdjecia FROM cardle ORDER BY rand() LIMIT 1"
 $result = $conn->query($sql);
 
 $input = [];
