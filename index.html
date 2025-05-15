@@ -15,7 +15,7 @@
             <a href="Classic/classic.html" class="nav-button">Classic</a>
             <a href="Photo/Photo.html" class="nav-button">Photo</a>
             <a href="Logo/Logo.html" class="nav-button">Logo</a>
-            <a href="about.html" class="nav-button">Credits</a>
+            <a id="credits" class="nav-button">Credits</a>
         </div>
         
         <div class="footer">
@@ -23,4 +23,21 @@
         </div>
     </div>
 </body>
+<script>
+    const cred = document.getElementById('credits')
+
+    let isExpanded = false
+
+    cred.addEventListener('click', function(){
+        if (isExpanded) {
+            cred.style.height = '49.59px'
+            cred.style.transition = 'all 0.7s'
+            isExpanded = false
+        } else {
+            cred.style.height = '250px'
+            cred.style.transition = 'all 0.7s'
+            isExpanded = true
+        }
+    });
+</script>
 </html>
