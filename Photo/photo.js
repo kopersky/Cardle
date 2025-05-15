@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     const response = await fetch("api.php");
     const carData = await response.json();
     console.log(carData)
+    var correctCarImage = carData.zdjecia
+    var correctCar = [carData.marka, carData.model]
 });
 
 //niech sie uleży (odbiera dane z pliku php)
