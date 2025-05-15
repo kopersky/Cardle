@@ -20,19 +20,39 @@ function checkEnter(event){
     }
 }
 
-// fetch('dane_photo.php')
-// .then(response => {
-//     if (!response.ok){
-//         throw new Error('Wystapil blad');
-//     }
-//     return response.json();
-// })
-// .then(data => {
-//     console.log("id:", data.id);
-//     console.log("zdj: ", data.zdjecia);
-//     console.log("marka: ", data.marka);
-//     console.log("model: ", data.model)
-// })
-// .catch(error =>{
-//     console.error("wystapil blad", error);
-// })
+
+document.addEventListener('DOMContentLoaded', async () => {
+    const modeleDB = document.getElementById('modele');
+    const inputField = document.getElementById('guess');
+
+    try {
+        const odp = await fetch('input.php');
+        let modelelista = await odp.json();
+
+        if (!Array.isArray(modelelista)) {
+            modelelista = [modelelista];
+        }
+
+        let modeleinput = modelelista.map(item => `${item.marka} ${item.model}`);
+
+        modeleDB.innerHTML = ''; 
+
+        modeleinput.forEach(item => {
+            const option = document.createElement('option');
+            option.value = item;
+            modeleDB.appendChild(option);
+        });
+
+        inputField.addEventListener('change', () => {
+            if (!modeleinput.includes(inputField.value)) {
+                alert("Wybierz poprawny model z listy!");
+                inputField.value = '';
+            }
+        });
+
+    } catch (error) {
+        modeleDB.innerHTML = "<option>Błąd ładowania danych</option>";
+        console.error(error);
+    }
+});
+
