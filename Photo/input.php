@@ -10,7 +10,7 @@ if ($conn->connect_error) {
     die(json_encode(["error" => "Connection failed: " . $conn->connect_error]));
 }
 
-$sql = "SELECT marka, model FROM cardle";
+$sql = "SELECT marka, model, zdjecia FROM cardle";
 $result = $conn->query($sql);
 
 $input = [];

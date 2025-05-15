@@ -10,7 +10,7 @@
 <body>
     <div class="logo">
         <a href="../index.html">
-            <img src="../Graphics/logo.png">
+            <img src="../Graphics/logo.png" id="cardle">
         </a>
     </div>
     <div class="main">
@@ -26,7 +26,7 @@
         <form onsubmit="clearInput(); return false;" method="POST" class="input">
             <input list='modele' type="text" id="guess" value="" placeholder="Podaj markę auta" onkeydown="checkEnter(event)"></input>
             <datalist id="modele"></datalist>
-            <button type="submit" id="but" onclick="func()" name="sub">Zgadnij</button>
+            <button type="submit" id="but" onclick="main()" name="sub">Zgadnij</button>
         </form>
     </div>
     <script defer src="photo.js"></script>

@@ -1,11 +1,17 @@
+var correcrCarImage;
+var correctCar;
+
 document.addEventListener("DOMContentLoaded", async () => {
     const carInfoDiv = document.getElementById("results");
 
     const response = await fetch("api.php");
     const carData = await response.json();
     console.log(carData)
-    var correctCarImage = carData.zdjecia
-    var correctCar = [carData.marka, carData.model]
+    correctCarImage = carData.zdjecia
+    correctCar = `${carData.marka} ${carData.model}`;
+
+    let zdj = document.getElementById("zdjecie");
+    zdj.src = `../assety/photo/${correctCarImage}`;
 });
 
 //niech sie uleży (odbiera dane z pliku php)
@@ -20,7 +26,7 @@ function checkEnter(event){
     }
 }
 
-
+// dodanie marek do datalist
 document.addEventListener('DOMContentLoaded', async () => {
     const modeleDB = document.getElementById('modele');
     const inputField = document.getElementById('guess');
@@ -55,3 +61,20 @@ document.addEventListener('DOMContentLoaded', async () => {
         console.error(error);
     }
 });
+
+
+// glowna funkcja gry eksperyment rn
+function main(){
+    let guess = document.getElementById("guess").value;
+
+    if (guess === correctCar){
+        alert("Gratulacje!");
+        setTimeout(window.location.reload(), 2000);
+    }
+    else{
+        alert("Nie to auto!");
+        clearInput();
+    }
+
+    
+}
