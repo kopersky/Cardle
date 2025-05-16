@@ -5,24 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" type="text/css" href="photostyle.css" />
-    <title>Photo</title>
+    <title>Cardle | Photo</title>
 </head>
 <body>
-    <div class="logo">
-        <a href="../index.html">
-            <img src="../Graphics/logo.png" id="cardle">
-        </a>
-    </div>
-    <div class="main">
-        <img id="zdjecie">
-    </div>
     <div class="container">
-        <center>
+        <a href="../index.html">
+            <img class="logo" src="../Graphics/logo.png" id="cardle">
+        </a>
         <div class="game-info">
             <p>Witaj w trybie Photo! Twoim zadaniem w tym trybie jest odgadnięcie marki auta po poszczególnym modelu</p>
             <p><span style="color: green">Zielony</span> = Dobrze, <span style="color: red">Czerwony</span> = Niepoprawne</p>
         </div>
-        </center>
+
+        <div class="main">
+            <img id="zdjecie">
+        </div>
+
         <form onsubmit="clearInput(); return false;" method="POST" class="input">
             <input list='modele' type="text" id="guess" value="" placeholder="Podaj markę auta" onkeydown="checkEnter(event)"></input>
             <datalist id="modele"></datalist>

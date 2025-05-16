@@ -3,23 +3,28 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bolder;
     font-size: large;
-    width: 100%;
-    height: 1000%;
-    background-image: linear-gradient(black, black), url("../Graphics/classictheme.jpg");
+    min-height: 100vh;
+    background-image: linear-gradient(black, black), url("../Graphics/phototheme.png");
     background-repeat: repeat-x;
     background-size: cover;
     background-blend-mode: saturation;
     background-attachment: fixed;
     background-position: left top;
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 
-img{
-    display: block;
-    scale: 0.5;
-    margin: 0 auto;
-    transform: translate(0%, -50%);
+.logo {
+    max-width: 200px;
+    justify-content: center;
+}
+
+a {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
 }
 
 .container {
