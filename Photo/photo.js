@@ -62,19 +62,47 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
+// tworzenie mini diva
+function createResultChild(color, content) {
+    let mdiv = document.createElement('div')
+    mdiv.textContent = content
+    mdiv.style.width = '100px'
+    mdiv.style.height = '100px'
+    mdiv.style.backgroundColor = color
+}
+
+// tworzenie diva
+function createResultDiv(color) {
+    let div = document.createElement('div')
+    div.innerHTML(createResultChild(color, guess))
+}
+
+// wyswietlanie diva od gory
+function addResultToTop(div) {
+    const resultsContainer = document.getElementById("results");
+    resultsContainer.prepend(div);
+}
 
 // glowna funkcja gry eksperyment rn
 function main(){
     let guess = document.getElementById("guess").value;
 
-    if (guess === correctCar){
-        alert("Gratulacje!");
-        setTimeout(window.location.reload(), 2000);
-    }
-    else{
-        alert("Nie to auto!");
-        clearInput();
-    }
+    const brandMatches = guessedCar.marka.toLowerCase() === targetCar.marka.toLowerCase();
+    div.appendChild(createResultChild(guessedCar.marka, brandMatches));
+    
+    const modelMatches = guessedCar.model.toLowerCase() === targetCar.model.toLowerCase();
+    div.appendChild(createResultChild(guessedCar.model, modelMatches));
+
+    // if (guess === correctCar){
+    //     alert("Gratulacje!");
+    //     setTimeout(window.location.reload(), 2000);
+    // }
+    // else{
+    //     addResultToTop(createResultChild('red', guess))
+    //     clearInput();
+    // }
 
     
 }
+
+
