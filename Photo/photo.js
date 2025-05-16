@@ -60,6 +60,26 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
+// tworzenie mini diva
+function createResultChild(color, content) {
+    let mdiv = document.createElement('div')
+    mdiv.textContent = content
+    mdiv.style.width = '100px'
+    mdiv.style.height = '100px'
+    mdiv.style.backgroundColor = color
+}
+
+// tworzenie diva
+function createResultDiv(color) {
+    let div = document.createElement('div')
+    div.innerHTML(createResultChild(color, guess))
+}
+
+// wyswietlanie diva od gory
+function addResultToTop(div) {
+    const resultsContainer = document.getElementById("results");
+    resultsContainer.prepend(div);
+}
 
 
 function main(){
@@ -72,3 +92,5 @@ function main(){
         alert("Błędna odpowiedź!")
     }
 }
+
+
