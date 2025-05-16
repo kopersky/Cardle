@@ -4,7 +4,7 @@ body {
     font-weight: bolder;
     font-size: large;
     min-height: 100vh;
-    background-image: url("../Graphics/placeholderlogotheme.png");
+    background-image: url("../Graphics/logotheme.jpg");
     background-repeat: repeat-x;
     background-size: cover;
     background-blend-mode: saturation;
@@ -149,4 +149,17 @@ a {
     display: flex;
     justify-content: center;
     font-weight: normal;
+}
+
+#zdjecie {
+    height: 200px;
+    width: 355px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    object-fit: scale-down;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
 }

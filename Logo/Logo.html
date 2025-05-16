@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,26 +13,24 @@
         <a href="../index.html">
             <img class="logo" src="../Graphics/logo.png">
         </a>
-
+        <center>
         <div class="game-info">
-            <p>Witaj w grze Cardle! Twoim zadaniem jest odgadnąć prawidłowe auto po kryteriach</p>
-            <p><span style="color: green">Zielony</span> = Dobrze, <span style="color: gold">Żółty </span> = Blisko (np. ta sama dekada), <span style="color: red">Czerwony</span> = Niepoprawne</p>
+            <p style="font-size: 18pt;">Witaj w trybie Logo! Twoim zadaniem jest odgadnąć prawidłowe logo marki po obrazku</p>
         </div>
-
+        </center>
         <div class="main">
             <img id="zdjecie">
         </div>
 
         <form onsubmit="clearInput(); return false;" method="POST" class="input">
-            <input list='modele' type="text" id="guess" value="" placeholder="Podaj markę i model auta" onkeydown="checkEnter(event)"></input>
-            <datalist id="modele"></datalist>
-            <button type="submit" id="but" onclick="func()" name="sub">Zgadnij</button>
+            <input type="text" id="guess" list="marki" placeholder="Select a brand">
+            <datalist id="marki"></datalist>
+            <button type="submit" id="but" onclick="main()" name="sub">Zgadnij</button>
         </form>
 
         <div class="result-container">
             <div id="results" class="results"></div>
         </div>
-
         <div class="footer">
             &copy; 2025 Cardle
         </div>
