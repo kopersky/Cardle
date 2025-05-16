@@ -150,3 +150,15 @@ a {
     justify-content: center;
     font-weight: normal;
 }
+
+#zdjecie {
+    height: 200px;
+    width: 355px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+}
