@@ -11,12 +11,13 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (carData.error) {
             carInfoDiv.textContent = carData.error;
         } else {
-            rand = [carData.marka, carData.model, carData.rok_produkcji, carData.typ_nadwozia];
+            rand = [carData.marka, carData.model, carData.rok_produkcji, carData.typ_nadwozia, carData.kraj];
             targetCar = {
                 marka: carData.marka,
                 model: carData.model,
                 rok_produkcji: carData.rok_produkcji,
-                typ_nadwozia: carData.typ_nadwozia
+                typ_nadwozia: carData.typ_nadwozia,
+                kraj: carData.kraj
             };
             console.log(rand);
         }
@@ -107,6 +108,9 @@ function createComparisonResultDiv(guessedCar, isCorrectGuess) {
 
     const bodyTypeMatches = guessedCar.typ_nadwozia.toLowerCase() === targetCar.typ_nadwozia.toLowerCase();
     div.appendChild(createResultChild(guessedCar.typ_nadwozia, bodyTypeMatches));
+
+    const countryMatches = guessedCar.kraj.toLowerCase() === targetCar.kraj.toLowerCase();
+    div.appendChild(createResultChild(guessedCar.kraj, countryMatches))
 
     return div;
 }

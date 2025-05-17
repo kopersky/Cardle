@@ -10,7 +10,7 @@ if ($conn->connect_error) {
     die("connection error: " . $conn->connect_error);
 }
 
-$sql = "SELECT id, marka, rok_produkcji, model, typ_nadwozia FROM cardle ORDER BY rand() LIMIT 1";
+$sql = "SELECT id, marka, rok_produkcji, model, typ_nadwozia, kraj FROM cardle ORDER BY rand() LIMIT 1";
 $result = $conn->query($sql);
 
 $data = [];
