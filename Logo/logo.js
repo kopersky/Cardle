@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
 function clearInput(){
-    document.getElementById("guess").innerText = ""
+    document.getElementById("guess").value = ""
 }
 
 document.addEventListener("keydown", function(e){
@@ -60,14 +60,45 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 
+function createComparisonResultDiv(guessedCar, isCorrectGuess) {
+    var div = document.createElement("div");
+    div.style.display = "flex";
+    div.style.gap = "10px";
+    div.style.height = "150px";
+    div.style.width = "80%";
+    div.style.backgroundColor = isCorrectGuess ? "green" : "red";
+    div.style.marginTop = "15px";
+    div.style.justifyContent = "center";
+    div.style.alignItems = "center";
+    div.style.border = "2px solid gray";
+    div.textContent = guessedCar
+    div.style.justifyContent = "center"
+    div.style.alignContent = "center"
 
-function main(){
-    let guess = document.getElementById("guess");
-    if (guess.value === correctCar){
-        alert(`Gratulacje! Widoczne logo to: ${guess.value}`);
-        setTimeout(location.reload(), 3000);
+    return div
+}
+
+function addResultToTop(div) {
+    const resultsContainer = document.getElementById("results");
+    resultsContainer.prepend(div);
+}
+
+function main() {
+    var input = document.getElementById("guess").value;
+    var carBrand = correctCar
+    
+    if (input === "") {
+        return alert("Pole nie może być puste.");
     }
-    else{
-        alert("Błędna odpowiedź!")
+
+    var isCorrect = x.toLowerCase() === carBrand.toLowerCase();
+    
+    var div = createComparisonResultDiv(guessedCar, isCorrect);
+    addResultToTop(div);
+    
+    if (isCorrect) {
+        setTimeout(() => {
+            window.location.reload();
+        }, 1000);
     }
 }

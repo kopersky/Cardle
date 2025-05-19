@@ -1,5 +1,6 @@
 var correcrCarImage;
 var correctCar;
+var targetCar
 
 document.addEventListener("DOMContentLoaded", async () => {
     const response = await fetch("api.php");
@@ -7,6 +8,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.log(carData)
     correctCarImage = carData.zdjecia
     correctCar = `${carData.marka} ${carData.model}`;
+    targetCar = {
+        marka: carData.marka,
+        model: carData.model,
+    };
 
     let zdj = document.getElementById("zdjecie");
     zdj.src = `../assety/photo/${correctCarImage}`;
@@ -15,7 +20,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 //niech sie uleży (odbiera dane z pliku php)
 
 function clearInput(){
-    document.getElementById("guess").innerText = ""
+    document.getElementById("guess").value = ""
 }
 
 document.addEventListener("keydown", function(e){
@@ -61,18 +66,41 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 // tworzenie mini diva
-function createResultChild(color, content) {
-    let mdiv = document.createElement('div')
-    mdiv.textContent = content
-    mdiv.style.width = '100px'
-    mdiv.style.height = '100px'
-    mdiv.style.backgroundColor = color
+function createResultChild(data, isMatching) {
+    var div = document.createElement("div");
+    div.style.height = "90%";
+    div.style.width = "20%";
+    div.textContent = data;
+    div.style.backgroundColor = isMatching ? "lightgreen" : "pink";
+    div.style.display = "flex";
+    div.style.justifyContent = "center";
+    div.style.alignItems = "center";
+    div.style.border = "1px solid black";
+    div.style.margin = "10px"
+    
+    return div;
 }
 
 // tworzenie diva
-function createResultDiv(color) {
-    let div = document.createElement('div')
-    div.innerHTML(createResultChild(color, guess))
+function createComparisonResultDiv(guessedCar, isCorrectGuess) {
+    var div = document.createElement("div");
+    div.style.display = "flex";
+    div.style.gap = "10px";
+    div.style.height = "150px";
+    div.style.width = "80%";
+    div.style.backgroundColor = isCorrectGuess ? "green" : "red";
+    div.style.marginTop = "15px";
+    div.style.justifyContent = "center";
+    div.style.alignItems = "center";
+    div.style.border = "2px solid gray";
+
+    const brandMatches = guessedCar.marka.toLowerCase() === targetCar.marka.toLowerCase();
+    div.appendChild(createResultChild(guessedCar.marka, brandMatches));
+    
+    const modelMatches = guessedCar.model.toLowerCase() === targetCar.model.toLowerCase();
+    div.appendChild(createResultChild(guessedCar.model, modelMatches));
+
+    return div
 }
 
 // wyswietlanie diva od gory
@@ -81,16 +109,47 @@ function addResultToTop(div) {
     resultsContainer.prepend(div);
 }
 
-
-function main(){
-    let guess = document.getElementById("guess");
-    if (guess.value === correctCar){
-        alert(`Gratulacje! Widoczny model to: ${guess.value}`);
-        setTimeout(location.reload(), 3000);
-    }
-    else{
-        alert("Błędna odpowiedź!")
+async function findCarDetails(carFullName) {
+    try {
+        const [brand, ...modelParts] = carFullName.split(' ');
+        const model = modelParts.join(' ');
+        
+        const response = await fetch('get_all_cars.php');
+        const cars = await response.json();
+        
+        return cars.find(car => 
+            car.marka.toLowerCase() === brand.toLowerCase() && 
+            car.model.toLowerCase() === model.toLowerCase()
+        );
+    } catch (error) {
+        console.error("Error finding car details:", error);
+        return null;
     }
 }
 
 
+function main() {
+    var x = document.getElementById("guess").value;
+    var carBrand = correctCar
+    
+    if (x === "") {
+        return alert("Pole nie może być puste.");
+    }
+
+    findCarDetails(x).then(guessedCar => {
+        if (!guessedCar) {
+            return alert("Wybierz poprawny model z listy!");
+        }
+
+        var isCorrect = x.toLowerCase() === carBrand.toLowerCase();
+        
+        var div = createComparisonResultDiv(guessedCar, isCorrect);
+        addResultToTop(div);
+        
+        if (isCorrect) {
+            setTimeout(() => {
+                window.location.reload();
+            }, 1000);
+        }
+    });
+}

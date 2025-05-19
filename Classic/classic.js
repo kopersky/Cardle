@@ -81,6 +81,7 @@ function createResultChild(data, isMatching) {
     div.style.justifyContent = "center";
     div.style.alignItems = "center";
     div.style.border = "1px solid black";
+    div.style.margin = "10px"
     
     return div;
 }
@@ -89,8 +90,8 @@ function createComparisonResultDiv(guessedCar, isCorrectGuess) {
     var div = document.createElement("div");
     div.style.display = "flex";
     div.style.gap = "10px";
-    div.style.height = "200px";
-    div.style.width = "50%";
+    div.style.height = "150px";
+    div.style.width = "80%";
     div.style.backgroundColor = isCorrectGuess ? "green" : "red";
     div.style.marginTop = "15px";
     div.style.justifyContent = "center";
@@ -131,14 +132,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     try {
         const odp = await fetch('input.php');
         let modelelista = await odp.json();
-        console.log("Otrzymane dane:", modelelista);
 
         if (!Array.isArray(modelelista)) {
             modelelista = [modelelista];
         }
 
         let modeleinput = modelelista.map(item => `${item.marka} ${item.model}`);
-        console.log("Lista modeli:", modeleinput);
 
         modeleDB.innerHTML = ''; 
 
