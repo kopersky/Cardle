@@ -74,6 +74,7 @@ function createComparisonResultDiv(guessedCar, isCorrectGuess) {
     div.textContent = guessedCar
     div.style.justifyContent = "center"
     div.style.alignContent = "center"
+    div.style.borderRadius = "10px"
 
     return div
 }
@@ -91,9 +92,9 @@ function main() {
         return alert("Pole nie może być puste.");
     }
 
-    var isCorrect = x.toLowerCase() === carBrand.toLowerCase();
+    var isCorrect = input.toLowerCase() === carBrand.toLowerCase();
     
-    var div = createComparisonResultDiv(guessedCar, isCorrect);
+    var div = createComparisonResultDiv(input, isCorrect);
     addResultToTop(div);
     
     if (isCorrect) {

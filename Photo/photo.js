@@ -77,6 +77,7 @@ function createResultChild(data, isMatching) {
     div.style.alignItems = "center";
     div.style.border = "1px solid black";
     div.style.margin = "10px"
+    div.style.borderRadius = "10px"
     
     return div;
 }
@@ -93,6 +94,7 @@ function createComparisonResultDiv(guessedCar, isCorrectGuess) {
     div.style.justifyContent = "center";
     div.style.alignItems = "center";
     div.style.border = "2px solid gray";
+    div.style.borderRadius = "10px"
 
     const brandMatches = guessedCar.marka.toLowerCase() === targetCar.marka.toLowerCase();
     div.appendChild(createResultChild(guessedCar.marka, brandMatches));

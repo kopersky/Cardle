@@ -106,6 +106,10 @@ a {
     cursor: pointer;
 }
 
+p {
+    text-align: center;
+}
+
 #but:hover {
     background-color: #3b5bdb;
     transform: translateY(-2px);

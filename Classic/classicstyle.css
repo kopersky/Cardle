@@ -27,6 +27,10 @@ a {
     margin-bottom: 10px;
 }
 
+p {
+    text-align: center;
+}
+
 .container {
     max-width: 1000px;
     margin: 0 auto;
@@ -131,11 +135,6 @@ a {
 
 .correct {
     background-color: #4CAF50;
-}
-
-.partial {
-    background-color: #FFC107;
-    color: #333;
 }
 
 .incorrect {
