@@ -96,6 +96,7 @@ function createResultChild(data, isMatching) {
     div.style.textOverflow = "ellipsis";
     div.style.overflow = "hidden";
     div.style.boxSizing = "border-box";
+    div.style.textAlign = "center";
     
     return div;
 }
@@ -114,7 +115,7 @@ function createComparisonResultDiv(guessedCar, isCorrectGuess) {
     div.style.border = "2px solid gray";
     div.style.borderRadius = "10px";
     div.style.minHeight = "120px";
-    div.style.boxSizing = "border-box"; 
+    div.style.boxSizing = "border-box";
     
     const brandMatches = guessedCar.marka.toLowerCase() === targetCar.marka.toLowerCase();
     div.appendChild(createResultChild(guessedCar.marka, brandMatches));
