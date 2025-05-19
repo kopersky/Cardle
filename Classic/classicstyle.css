@@ -121,3 +121,12 @@ p {
     border: none;
     cursor: pointer;
 }
+
+.footer {
+    margin-top: 40px;
+    font-size: 14px;
+    color: #888;
+    display: flex;
+    justify-content: center;
+    font-weight: normal;
+}
