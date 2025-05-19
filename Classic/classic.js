@@ -1,5 +1,6 @@
 let rand;
 let targetCar;
+// let bodyMargin = 0;
 
 document.addEventListener("DOMContentLoaded", async () => {
     const carInfoDiv = document.getElementById("results");
@@ -44,6 +45,8 @@ function main() {
         
         var div = createComparisonResultDiv(guessedCar, isCorrect);
         addResultToTop(div);
+        // bodyMargin += 3
+        // document.getElementsByTagName('body')[0].style.margin = `${bodyMargin}%`
         
         if (isCorrect) {
             setTimeout(() => {
