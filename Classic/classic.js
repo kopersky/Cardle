@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 });
 
-function func() {
+function main() {
     var x = document.getElementById("guess").value;
     var carBrand = rand[0] + ' ' + rand[1];
     
