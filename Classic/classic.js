@@ -1,9 +1,15 @@
 let rand;
 let targetCar;
-// let bodyMargin = 0;
 
 document.addEventListener("DOMContentLoaded", async () => {
     const carInfoDiv = document.getElementById("results");
+    
+    const resultsContainer = document.getElementById("results");
+    resultsContainer.style.maxHeight = "400px";
+    resultsContainer.style.overflowY = "auto";
+    
+    const container = document.querySelector('.container');
+    container.style.transform = "translateY(0)";
 
     try {
         const response = await fetch("api.php");
@@ -45,8 +51,8 @@ function main() {
         
         var div = createComparisonResultDiv(guessedCar, isCorrect);
         addResultToTop(div);
-        // bodyMargin += 3
-        // document.getElementsByTagName('body')[0].style.margin = `${bodyMargin}%`
+        
+        document.getElementById('guess').focus();
         
         if (isCorrect) {
             setTimeout(() => {
@@ -84,8 +90,12 @@ function createResultChild(data, isMatching) {
     div.style.justifyContent = "center";
     div.style.alignItems = "center";
     div.style.border = "1px solid black";
-    div.style.margin = "10px"
-    div.style.borderRadius = "10px"
+    div.style.margin = "10px";
+    div.style.borderRadius = "10px";
+    div.style.padding = "5px";
+    div.style.textOverflow = "ellipsis";
+    div.style.overflow = "hidden";
+    div.style.boxSizing = "border-box";
     
     return div;
 }
@@ -98,10 +108,13 @@ function createComparisonResultDiv(guessedCar, isCorrectGuess) {
     div.style.width = "80%";
     div.style.backgroundColor = isCorrectGuess ? "green" : "red";
     div.style.marginTop = "15px";
+    div.style.marginBottom = "15px";
     div.style.justifyContent = "center";
     div.style.alignItems = "center";
     div.style.border = "2px solid gray";
-    div.style.borderRadius = "10px"
+    div.style.borderRadius = "10px";
+    div.style.minHeight = "120px";
+    div.style.boxSizing = "border-box"; 
     
     const brandMatches = guessedCar.marka.toLowerCase() === targetCar.marka.toLowerCase();
     div.appendChild(createResultChild(guessedCar.marka, brandMatches));
@@ -128,6 +141,8 @@ function clearInput() {
 function addResultToTop(div) {
     const resultsContainer = document.getElementById("results");
     resultsContainer.prepend(div);
+    const container = document.querySelector('.container');
+    container.style.transform = "translateY(0)";
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
