@@ -13,9 +13,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow-y: hidden;
 }
 
 .logo {
+    scale: 1.2;
     max-width: 200px;
     justify-content: center;
 }
@@ -27,8 +29,7 @@ a {
 }
 
 .container {
-    scale: 80%;
-    max-width: 1000px;
+    scale: 0.8;
     margin: 0 auto;
     padding: 20px;
     background-color: #ffffff;
@@ -46,7 +47,7 @@ a {
     border-left: 5px solid #3498db;
 }
 
-/* Added result container with scrolling functionality */
+
 .result-container {
     height: 200px;
     max-height: 200px;
@@ -57,7 +58,7 @@ a {
     scrollbar-color: #3498db #f1f1f1;
 }
 
-/* Added scrollbar styling for webkit browsers */
+
 .result-container::-webkit-scrollbar {
     width: 8px;
 }
@@ -175,11 +176,12 @@ a {
 }
 
 #zdjecie {
+    scale: 1.1  ;
     height: 200px;
     width: 355px;
     margin-bottom: 15px;
     border-radius: 10px;
-    object-fit: scale-down; /* Added to ensure images maintain aspect ratio */
+    object-fit: scale-down;
 }
 
 .main {

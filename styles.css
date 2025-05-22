@@ -30,6 +30,7 @@ body {
 }
 
 .logo {
+  scale: 1.2;
   max-width: 200px;
   margin: 0 auto 20px;
 }
