@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     zdj.src = `../assety/photo/${correctCarImage}`;
 });
 
-//niech sie uleży (odbiera dane z pliku php)
 
 function clearInput(){
     document.getElementById("guess").value = ""
@@ -29,7 +28,6 @@ document.addEventListener("keydown", function(e){
     }
 })
 
-// dodanie marek do datalist
 document.addEventListener('DOMContentLoaded', async () => {
     const modeleDB = document.getElementById('modele');
     const inputField = document.getElementById('guess');
@@ -65,7 +63,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
-// tworzenie mini diva
 function createResultChild(data, isMatching) {
     var div = document.createElement("div");
     div.style.height = "90%";
@@ -82,7 +79,6 @@ function createResultChild(data, isMatching) {
     return div;
 }
 
-// tworzenie diva
 function createComparisonResultDiv(guessedCar, isCorrectGuess) {
     var div = document.createElement("div");
     div.style.display = "flex";
@@ -105,7 +101,6 @@ function createComparisonResultDiv(guessedCar, isCorrectGuess) {
     return div
 }
 
-// wyswietlanie diva od gory
 function addResultToTop(div) {
     const resultsContainer = document.getElementById("results");
     resultsContainer.prepend(div);
