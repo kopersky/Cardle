@@ -35,19 +35,19 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 function main() {
-    var x = document.getElementById("guess").value;
+    var userInput = document.getElementById("guess").value;
     var carBrand = rand[0] + ' ' + rand[1];
     
-    if (x === "") {
+    if (userInput === "") {
         return alert("Pole nie może być puste.");
     }
 
-    findCarDetails(x).then(guessedCar => {
+    findCarDetails(userInput).then(guessedCar => {
         if (!guessedCar) {
             return alert("Wybierz poprawny model z listy!");
         }
 
-        var isCorrect = x.toLowerCase() === carBrand.toLowerCase();
+        var isCorrect = userInput.toLowerCase() === carBrand.toLowerCase();
         
         var div = createComparisonResultDiv(guessedCar, isCorrect);
         addResultToTop(div);
